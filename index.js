@@ -1,11 +1,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const Client = require('./client/Client');
-// const {token} = require('./config.json');
 const {Player} = require('discord-player');
-const aws = require('aws-sdk');
-
-const token = process.env.token;
 
 const client = new Client();
 client.commands = new Discord.Collection();
@@ -93,4 +89,4 @@ client.on('interactionCreate', async interaction => {
   }
 });
 
-client.login(token);
+client.login(process.env.token);
